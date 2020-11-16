@@ -16,31 +16,27 @@
       <th width="150x" align="left">Task</th>
       <th width="200px" align="left">Description</th>
       <th width="100px" align="left">Updated</th>
-      <th colspan="3"></th>
+      
     </tr>
   </thead>
 
   <tbody>
     <% @user.tasks.each do |a| %>
       <tr>
-        <td><%= a.t_title %></td>
+        <td><%#= a.t_title %><%= link_to a.t_title, a %></td>
         <td><%= a.t_descn.first(50) %></td>
         <td><%= a.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
-        <td><%= link_to 'Show', a %></td>
-        <td><%= link_to 'Edit', edit_task_path(a) %></td>
-        <td><%= link_to 'Delete', a, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        </tr>
     <% end %>
   </tbody>
 </table>
 
-<h3>Last update:
-  <% @user.tasks.last(1).each do |u|%>
-    <%= u.t_title %> - <%= u.updated_at.localtime.strftime("%H:%M %Y.%m.%d")  %>
-  <% end %>
-</h3>
+  <%# @user.tasks.last(1).each do |u|%>
+    <%#= u.t_title %>
+    <%#= u.updated_at.localtime.strftime("%H:%M %Y.%m.%d")  %>
+  <%# end %>
 
-<p><%= t = @user.tasks.order('updated_at DESC').take(1)%> 
+<%#= t = @user.tasks.order('updated_at DESC').take(1)%> 
 
 <br></br>
 

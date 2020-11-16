@@ -1,9 +1,10 @@
 <h1>Editing User</h1>
 
 <%= render 'form', user: @user %>
-
-<%= button_to 'BACK TO USER', user_path, method: :get%>
 <p><%= link_to 'Delete User', @user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<br></br>
+<%= button_to 'Back to User', user_path, method: :get%>
+
 <%#= link_to 'Back to User', @user %> 
 <%#= link_to 'Back', users_path %>
 

@@ -12,12 +12,17 @@
   <%= @task.t_title %>
 </p>
 
-<p>
+<div>
   <strong>Description:</strong>
-  <%= @task.t_descn %>
-</p>
+  <p class="desc"><%= @task.t_descn %></p>
+</div>
 
-<%= link_to 'Edit Task', edit_task_path(@task) %> |
+<table >
+<td class="butt"><%= button_to 'EDIT TASK', edit_task_path(@task), method: :get%></td>
+<td class="butt"><%= link_to 'Delete Task', @task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</table>
+
+<%#= link_to 'Edit Task', edit_task_path(@task) %> 
 <%= link_to 'Back to Users', users_path %> |
 <%= link_to 'Back to User', user_path(@task.user_id) %> 
 
