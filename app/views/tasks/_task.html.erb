@@ -1,0 +1,4 @@
+<%= link_to task.user.name, task.user %>
+<p><%= task.t_title %> </p>
+<p><%= task.t_descn %> </p>
+<p>Created <%= time_ago_in_words (task.created_at) %> ago </p>

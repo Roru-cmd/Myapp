@@ -1,0 +1,23 @@
+<% provide(:title, "Task") %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @task.user_id %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @task.t_title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.t_descn %>
+</p>
+
+<%= link_to 'Edit Task', edit_task_path(@task) %> |
+<%= link_to 'Back to Users', users_path %> |
+<%= link_to 'Back to User', user_path(@task.user_id) %> 
+
