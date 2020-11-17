@@ -11,24 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="new">
     <%= form.label :name %>
     <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
+    
     <%#= form.label :task %>
     <%#= form.text_field :active_job %>
-  </div>
-
-  <div class="field">
+    
     <%#= form.label :time %>
     <%#= form.text_field :time %>  
     <%#= form.label :added_at %>        
     <%#= Time.now.strftime("%H:%M %B %d,%Y") %>
-  </div>
-<br></br>
-  <div class="actions">
+  
+    <br></br>
+  
     <%= form.submit %>
   </div>
 <% end %>
+

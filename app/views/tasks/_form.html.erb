@@ -11,24 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :Task %>
-    <%= form.text_field (:t_title) %>
-  </div>
+  <div class="desc">
+    <p><%= form.label :task %></p>
+    <%= form.text_field :t_title %> 
 
-  <div class="field">
-    <%= form.label :Description %>
+    <p><%= form.label :Description %></p>
     <%= form.text_area :t_descn %>
-  </div>
-  <div class="field">
+
     <%#= form.label :User %>
     <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
-  </div>
-  <%= Time.now.strftime("%H:%M %B %d,%Y") %>  
 
-<br></br>
+    <p><%= Time.now.strftime("%H:%M %B %d,%Y") %> </p>
 
-  <div class="actions">
+    <br></br>
     <%= form.submit %>
   </div>
 <% end %>

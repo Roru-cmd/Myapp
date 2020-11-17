@@ -1,0 +1,28 @@
+a {
+    /* display: block; Ссылка как блочный элемент */
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.1em;
+    padding: 6px; /* Поля вокруг надписи */
+    text-decoration: none; /* Подчеркивание у ссылок убираем */
+    color: rgb(10, 12, 77); /* Цвет текста */
+    /* background-color: rgb(219, 219, 221); Цвет фона */
+    height: 100%; /* Высота на весь слой */    
+    text-align: center; 
+}
+a:hover {
+    color: #ffe; /* Цвет текста активного пункта */
+    background-color: #5488af; /* Цвет фона активного пункта */
+}
+a:visited {
+    color: rgb(10, 12, 77); /* Цвет текста */
+}
+.new { 
+    width: 300px; /* Ширина */
+    background: rgb(243, 242, 238); /* Цвет фона */
+    padding: 20px; /* Поля */
+    font-size: 1.1em;
+    -moz-box-sizing: border-box; /* Для Firefox */
+    -webkit-box-sizing: border-box; /* Для Safari и Chrome */
+    box-sizing: border-box; /* Для IE и Opera */
+}
