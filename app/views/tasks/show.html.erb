@@ -1,21 +1,18 @@
 <% provide(:title, "Task") %>
 
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%#= @task.user_id %>###
-  <%= current_user.name %>
   
-</p>
-
-<p>
-  <strong>Task:</strong>
-  <%= @task.t_title %>
-</p>
+<h1><%= current_user.name %></h1>
+<%#= @task.user_id %>
+<br></br>
 
 <div>
-  <strong>Description:</strong>
+  <strong>TASK:</strong>
+  <%= @task.t_title %>
+</div>
+<br></br>
+<div>
+  <strong>DESCRIPTION:</strong>
   <p class="desc"><%= @task.t_descn %></p>
 </div>
 
