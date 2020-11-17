@@ -63565,3 +63565,205 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 2.0ms | Allocations: 7583)
 
 
+Started GET "/users/new" for 127.0.0.1 at 2020-11-17 10:05:21 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.6ms | Allocations: 876)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1197)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 83.7ms | ActiveRecord: 0.0ms | Allocations: 4831)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-11-17 10:05:28 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY name[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  Rendered users/index.html.erb within layouts/application (Duration: 38.5ms | Allocations: 9411)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 47ms (Views: 40.6ms | ActiveRecord: 5.4ms | Allocations: 13095)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-11-17 10:05:31 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.3ms | Allocations: 506)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 588)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4086)
+
+
+Started POST "/users" for 127.0.0.1 at 2020-11-17 10:05:34 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"NZA45BqIQbEV5dwn5lFc7z7G2UUfVpWczz1n+t+SZw1NHnz4IJNMq+zUSi06cTGub2e9Gknr19IUhuAFGomjiw==", "user"=>{"name"=>"12"}, "commit"=>"Create User"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:35:in `block in create'
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" = $1 LIMIT $2[0m  [["name", "12"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `block in create'
+  [1m[36mUser Create (115.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "12"], ["created_at", "2020-11-17 01:05:34.830965"], ["updated_at", "2020-11-17 01:05:34.830965"]]
+  ↳ app/controllers/users_controller.rb:35:in `block in create'
+  [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:35:in `block in create'
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 141ms (ActiveRecord: 131.7ms | Allocations: 4393)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2020-11-17 10:05:34 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/views/users/show.html.erb:24
+  Rendered users/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1523)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 1.3ms | Allocations: 6261)
+
+
+Started GET "/users/17/edit" for 127.0.0.1 at 2020-11-17 10:05:40 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `set_user'
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.1ms | Allocations: 562)
+  Rendered users/edit.html.erb within layouts/application (Duration: 10.2ms | Allocations: 907)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.7ms | Allocations: 5091)
+
+
+Started DELETE "/users/17" for 127.0.0.1 at 2020-11-17 10:05:44 +0900
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uE7Vh/0d1K13cpRN4lVLWYf90OFgA5pARqypc6hXtgvAwJGbxwbZt45DAkc+dSYY1ly0vja+2A6dFy6MbUxyjQ==", "id"=>"17"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `set_user'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:62:in `destroy'
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 17]]
+  ↳ app/controllers/users_controller.rb:62:in `destroy'
+  [1m[36mUser Destroy (79.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/users_controller.rb:62:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:62:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 165ms (ActiveRecord: 81.0ms | Allocations: 3968)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-11-17 10:05:44 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY name[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  Rendered users/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 8879)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 2.5ms | Allocations: 12435)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-11-17 10:05:50 +0900
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.2ms | Allocations: 504)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 586)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 4078)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-11-17 10:05:51 +0900
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY name[0m
+  ↳ app/views/users/index.html.erb:21
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (2.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.7ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  [1m[36mTask Load (0.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:26
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1 ORDER BY updated_at DESC LIMIT $2[0m  [["user_id", 7], ["LIMIT", 1]]
+  ↳ app/views/users/index.html.erb:33
+  Rendered users/index.html.erb within layouts/application (Duration: 21.4ms | Allocations: 8872)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 24.2ms | ActiveRecord: 4.9ms | Allocations: 12404)
+
+
+Started GET "/tasks/26" for 127.0.0.1 at 2020-11-17 10:05:53 +0900
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/tasks_controller.rb:72:in `set_task'
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 4264)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-11-17 10:06:11 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:72:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/users/show.html.erb:24
+  Rendered users/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1818)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.5ms | Allocations: 6500)
+
+
