@@ -11,7 +11,8 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    #@user = User.find(params[:user_id])       
+    #@task = Task.find_by(params[:user_id])
+    
   end
 
   # GET /tasks/new
