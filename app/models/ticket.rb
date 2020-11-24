@@ -1,3 +1,4 @@
 class Ticket < ApplicationRecord
-  belongs_to :user
+  has_many :tasks, dependent: :destroy
+  belongs_to :user  
 end

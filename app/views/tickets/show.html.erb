@@ -21,4 +21,5 @@
 </p>
 
 <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+<%#= link_to 'Back', tickets_path %>
+<%= link_to 'Back to User', user_path(@ticket.user_id) %> 

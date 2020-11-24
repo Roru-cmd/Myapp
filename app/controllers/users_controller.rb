@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @users = User.all
     @users = User.order('name') 
     @task = Task.all
+    @ticket = Ticket.all
   end
 
   # GET /users/1
@@ -15,6 +16,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])    
     @task = @user.tasks
     @tasks = @task.order('updated_at DESC')
+    @ticket = @user.tickets
+    @tickets = @ticket.order('updated_at DESC')
   end
 
   # GET /users/new

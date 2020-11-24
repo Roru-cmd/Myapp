@@ -6,9 +6,10 @@
 <table>
   <thead>
     <tr>
-      <th>Ticket d</th>
-      <th>Ticket start</th>
-      <th>Ticket end</th>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Start</th>
+      <th>End</th>
       <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -17,6 +18,7 @@
   <tbody>
     <% @tickets.each do |ticket| %>
       <tr>
+        <td></td>
         <td><%= ticket.ticket_d %></td>
         <td><%= ticket.ticket_start %></td>
         <td><%= ticket.ticket_end %></td>
