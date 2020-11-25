@@ -26,3 +26,31 @@ a:visited {
     -webkit-box-sizing: border-box; /* Для Safari и Chrome */
     box-sizing: border-box; /* Для IE и Opera */
 }
+aside {
+    /*width: 30%;*/
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+    /*font-style: italic;*/
+    /*background-color: lightgray;*/
+}
+.wrapper {
+    width: 900px;
+
+}
+.left_block {
+    float:left;
+    width: 600px;
+    margin-top: 15px;
+}
+.right_block {
+    float:right;
+    width: 280px;  
+    margin-top: 30px;  
+    background: rgb(243, 242, 238); /* Цвет фона */
+    padding: 20px; /* Поля */
+    font-size: 1.1em;
+    -moz-box-sizing: border-box; /* Для Firefox */
+    -webkit-box-sizing: border-box; /* Для Safari и Chrome */
+    box-sizing: border-box; /* Для IE и Opera */
+}

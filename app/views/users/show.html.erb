@@ -3,13 +3,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @user.name %></h1>
-<%= link_to 'User edit', edit_user_path(@user) %>
-| <%= link_to 'Back to Users', users_path %> 
+<%= link_to 'User edit', edit_user_path(@user) %> | 
+<%= link_to 'Back to All users', users_path %> 
 
-<br></br>
-
+<div class="wrapper">
+<div class="left_block">
 <h3>TASKS</h3>
-
 <table>
   <thead>
     <tr>
@@ -18,50 +17,39 @@
       <th width="100px" align="left">Updated</th>      
     </tr>
   </thead>
-
   <tbody>
     <% @user.tasks.each do |a| %>
       <tr>
-        <td><%#= a.t_title %><%= link_to a.t_title, a %></td>
+        <td><%= link_to a.t_title, a %></td>
         <td><%= a.t_descn.first(50) %></td>
         <td><%= a.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
         </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-  <%# @user.tasks.last(1).each do |u|%>
-    <%#= u.t_title %>
-    <%#= u.updated_at.localtime.strftime("%H:%M %Y.%m.%d")  %>
-  <%# end %>
-
-<%#= t = @user.tasks.order('updated_at DESC').take(1)%> 
-
-<br></br>
-
-<div class="new">
+<!-- <div class="new"> -->
+<div class="right_block">
 <h3>New task</h3>
-
-<%#= form_with(model: [@user, @user.tasks.create], local: true) do |form| %>
 <%= form_with(model: [@user, @user.tasks.build], local: true) do |form| %>
   <p width="150x">
     <%= form.label :Title %><br>
     <%= form.text_field :t_title %>
   </p>
-
   <p width="150x">
     <%= form.label :Description %><br>
     <%= form.text_area :t_descn %>
   </p>
-
   <p>
     <%= form.submit %>
   </p>
-<% end %>
+<% end %>   
+</div>
 </div>
 
-<br></br>
-
+<div class="wrapper">
+<div class="left_block">
 <h3>TICKETS</h3>
 <table>
   <thead>
@@ -85,43 +73,39 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br></br>
-
-<div class="new">
+<!-- <div class="new">-->
+<div class="right_block">
 <h3>New ticket</h3>
-
 <%= form_with(model: [@user, @user.tickets.build], local: true) do |form| %>
   <p width="150x">
     <%= form.label :Title %><br>
     <%#= form.text_field :t_title %>
     <%= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%>
   </p>
-
   <p width="150x">
     <%= form.label :Description %><br>
     <%= form.text_area :ticket_d %>
   </p>
-
-    <%= form.label :User %>
-    <%= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
+    <%#= form.label :User %>    
+    <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
+    <%= form.text_field :user_id%>
   <p>
     <%= form.submit %>
   </p>
 <% end %>
-</div>
-
-
-<br></br>
-
-<div>
 <%= Time.now.strftime("%H:%M:%S %B %d,%Y") %>
+</div>
+</div>
+<div class="wrapper">
+<p></p>
 <script> /*5 sec. refresh script*/
-$(document).ready(function() {
-  setTimeout(function() {
-    window.location.reload();
-  }, 5000);
-});
+  $(document).ready(function() {
+    setTimeout(function() {
+      window.location.reload();
+    }, 5000);
+  });
 </script>
 </div>
 
