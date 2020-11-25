@@ -75,7 +75,7 @@
   <tbody>
     <% @user.tickets.each do |t| %>
       <tr>
-        <td><%= %></td>
+        <td><%= %> <%=Task.all.collect{ |u| u.t_title }%></td>
         <td><%= t.ticket_d.first(50) %></td>
         <td><%= t.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
         <td><%= link_to 'Show', t %></td>
@@ -85,6 +85,32 @@
     <% end %>
   </tbody>
 </table>
+
+<br></br>
+
+<div class="new">
+<h3>New ticket</h3>
+
+<%= form_with(model: [@user, @user.tickets.build], local: true) do |form| %>
+  <p width="150x">
+    <%= form.label :Title %><br>
+    <%#= form.text_field :t_title %>
+    <%= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%>
+  </p>
+
+  <p width="150x">
+    <%= form.label :Description %><br>
+    <%= form.text_area :ticket_d %>
+  </p>
+
+    <%= form.label :User %>
+    <%= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+</div>
+
 
 <br></br>
 
