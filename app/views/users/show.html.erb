@@ -63,7 +63,8 @@
   <tbody>
     <% @user.tickets.each do |t| %>
       <tr>
-        <td><%= %> <%=Task.all.collect{ |u| u.t_title }%></td>
+        <!--<td><%#=Task.all.collect{ |u| u.t_title }%></td> -->
+        <td><%= t.tasks.order('updated_at DESC').take(1){ |u| u.t_title }%></td>                  
         <td><%= t.ticket_d.first(50) %></td>
         <td><%= t.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
         <td><%= link_to 'Show', t %></td>
