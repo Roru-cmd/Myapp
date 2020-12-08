@@ -63,8 +63,8 @@
   <tbody>
     <% @user.tickets.each do |t| %>
       <tr>
-        <!--<td><%#=Task.all.collect{ |u| u.t_title }%></td> -->
-        <td><%= t.tasks.order('updated_at DESC').take(1){ |u| u.t_title }%></td>                  
+        <td><%=Task.all.collect{ |u| u.t_title }%></td> 
+        <!--<td><%#= t.tasks.order('updated_at DESC').take(1){ |u| u.t_title }%></td>-->               
         <td><%= t.ticket_d.first(50) %></td>
         <td><%= t.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
         <td><%= link_to 'Show', t %></td>
@@ -79,26 +79,30 @@
 <!-- <div class="new">-->
 <div class="right_block">
 <h3>New ticket</h3>
+
 <%= form_with(model: [@user, @user.tickets.build], local: true) do |form| %>
   <p width="150x">
     <%= form.label :Title %><br>
     <%#= form.text_field :t_title %>
-    <%= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%>
+    <%#= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%>
+    <%= form.select :t_title, @user.tasks.each{ |t| [t.t_title] }%>
   </p>
+       
   <p width="150x">
     <%= form.label :Description %><br>
     <%= form.text_area :ticket_d %>
   </p>
-    <%#= form.label :User %>    
-    <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
-    <%= form.text_field :user_id%>
+  <%#= form.label :User %>    
+  <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
+  <%= form.text_field :user_id%>
   <p>
     <%= form.submit %>
   </p>
 <% end %>
+
 <%= Time.now.strftime("%H:%M:%S %B %d,%Y") %>
 </div>
-</div>
+
 <div class="wrapper">
 <p></p>
 <script> /*5 sec. refresh script*/
