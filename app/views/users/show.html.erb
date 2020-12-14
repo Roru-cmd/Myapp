@@ -5,6 +5,7 @@
 <h1><%= @user.name %></h1>
 <%= link_to 'User edit', edit_user_path(@user) %> | 
 <%= link_to 'Back to All users', users_path %> 
+<p><%= link_to 'New Ticket', new_ticket_path %></p>
 
 <div class="wrapper">
 <div class="left_block">
@@ -29,7 +30,8 @@
 </table>
 </div>
 
-<!-- <div class="new"> -->
+<!-- Creating a New Task -->
+
 <div class="right_block">
 <h3>New task</h3>
 <%= form_with(model: [@user, @user.tasks.build], local: true) do |form| %>
@@ -48,6 +50,8 @@
 </div>
 </div>
 
+<!-- Tickets Table -->
+
 <div class="wrapper">
 <div class="left_block">
 <h3>TICKETS</h3>
@@ -61,31 +65,40 @@
     </tr>
   </thead>
   <tbody>
-    <% @user.tickets.each do |t| %>
+    <% @user.tickets.each do |ticket| %>
       <tr>
-        <td><%=Task.all.collect{ |u| u.t_title }%></td> 
+        <td>
+          <%= ticket.task_id %>
+        </td>
+        <!--<td><%#=Task.all.collect{ |u| u.t_title }%></td> --> 
         <!--<td><%#= t.tasks.order('updated_at DESC').take(1){ |u| u.t_title }%></td>-->               
-        <td><%= t.ticket_d.first(50) %></td>
-        <td><%= t.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
-        <td><%= link_to 'Show', t %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(t) %></td>
-        <td><%= link_to 'Destroy', t, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= ticket.ticket_d.first(50) %></td>
+        <td><%= ticket.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
+        <td><%= link_to 'Show', ticket %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>    
     <% end %>
   </tbody>
 </table>
 </div>
 
-<!-- <div class="new">-->
+<!-- Creating a New Ticket -->
+
 <div class="right_block">
 <h3>New ticket</h3>
 
 <%= form_with(model: [@user, @user.tickets.build], local: true) do |form| %>
   <p width="150x">
-    <%= form.label :Title %><br>
+    <%= form.label :Task_ID %><br>
+    <%= form.text_field :task_id%>
     <%#= form.text_field :t_title %>
     <%#= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%>
-    <%= form.select :t_title, @user.tasks.each{ |t| [t.t_title] }%>
+    <%#= form.select :t_title, @user.tasks.each{ |u| [u.t_title] }%>
+  </p>
+  <p>
+    <%= form.label :User_ID %><br>
+    <%= form.text_field :user_id%> 
   </p>
        
   <p width="150x">
@@ -94,7 +107,7 @@
   </p>
   <%#= form.label :User %>    
   <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
-  <%= form.text_field :user_id%>
+
   <p>
     <%= form.submit %>
   </p>

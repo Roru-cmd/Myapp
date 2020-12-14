@@ -10,6 +10,7 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   # GET /tickets/1.json
   def show
+    @ticket = Ticket.find_by(task_id:params[:task_id]) 
   end
 
   # GET /tickets/new
