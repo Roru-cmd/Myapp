@@ -8,6 +8,9 @@
 <p><%= link_to 'New Ticket', new_ticket_path %></p>
 
 <div class="wrapper">
+
+<!-- Tasks table -->
+
 <div class="left_block">
 <h3>TASKS</h3>
 <table>
@@ -91,9 +94,9 @@
 <%= form_with(model: [@user, @user.tickets.build], local: true) do |form| %>
   <p width="150x">
     <%= form.label :Task_ID %><br>
-    <%= form.text_field :task_id%>
+    <%#= form.text_field :task_id%>   
     <%#= form.text_field :t_title %>
-    <%#= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%>
+    <%= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%>
     <%#= form.select :t_title, @user.tasks.each{ |u| [u.t_title] }%>
   </p>
   <p>
