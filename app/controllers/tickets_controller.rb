@@ -16,6 +16,8 @@ class TicketsController < ApplicationController
   # GET /tickets/new
   def new
     @ticket = Ticket.new
+    @task = Task.new
+    @user = User.new
   end
 
   # GET /tickets/1/edit
@@ -25,8 +27,10 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.new(ticket_params)    
-    @user = User.find(params[:user_id])     
+    @user = User.find(params[:user_id])    
+    @ticket = Ticket.new(ticket_params)
+    #@ticket = Ticket.find_by(task_id:params[:task_id]) 
+    #@ticket = @user.tasks.tickets.create(ticket_params)    
 
     respond_to do |format|
       if @ticket.save
@@ -73,5 +77,6 @@ class TicketsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def ticket_params
       params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end, :user_id)
+      #params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end, :user_id, task_id)
     end
 end

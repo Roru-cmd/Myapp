@@ -16,7 +16,7 @@
     <%= form.text_field :t_title %> 
 
     <p><%= form.label :Description %></p>
-    <%= form.text_area :t_descn %>
+    <%= form.text_area :t_descn, rows: 10, cols: 50 %>
 
     <%#= form.label :User %>
     <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
