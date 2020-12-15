@@ -25,15 +25,16 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = Ticket.new(ticket_params)    
+    @user = User.find(params[:user_id])     
 
     respond_to do |format|
       if @ticket.save
-        format.html { redirect_to @ticket, notice: 'Ticket was successfully created.' }
+        format.html { redirect_to @user, notice: 'Ticket was successfully created.' }
         format.json { render :show, status: :created, location: @ticket }
       else
         format.html { render :new }
-        format.json { render json: @ticket.errors, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,10 +55,11 @@ class TicketsController < ApplicationController
 
   # DELETE /tickets/1
   # DELETE /tickets/1.json
-  def destroy
+  def destroy    
     @ticket.destroy
     respond_to do |format|
-      format.html { redirect_to tickets_url, notice: 'Ticket was successfully destroyed.' }      
+      #format.html { redirect_to tickets_url, notice: 'Ticket was successfully destroyed.' }      
+      format.html { redirect_to user_path(@ticket.user_id), notice: 'Ticket was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
