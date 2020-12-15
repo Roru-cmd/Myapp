@@ -44,7 +44,7 @@
   </p>
   <p width="150x">
     <%= form.label :Description %><br>
-    <%= form.text_area :t_descn %>
+    <%= form.text_area :t_descn, rows: 5, cols: 25 %>
   </p>
   <p>
     <%= form.submit %>
@@ -93,20 +93,24 @@
 
 <%= form_with(model: [@user, @user.tickets.build], local: true) do |form| %>
   <p width="150x">
-    <%= form.label :Task_ID %><br>
+    <%= form.label :Select_a_task %>
+  </p>
+  <p>
+    <%= form.collection_select(:task_id, @user.tasks, :id, :t_title) %>  <!-- Currrent user tasks-->
     <%#= form.text_field :task_id%>   
     <%#= form.text_field :t_title %>
-    <%= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%> <!-- All Tasks -->    
+    <%#= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%> <!-- All Tasks -->        
     <%#= form.select :t_title, @user.tasks.each{ |u| [u.t_title] }%>
   </p>
   <p>
-    <%= form.label :User_ID %><br>
-    <%= form.text_field :user_id%>     
+    <%= form.text_field :user_id, hidden: true %>  
+    <%#= form.label :User %>   
+    <%#= form.collection_select(:user_id, User.all, :id, :name, :prompt => true) %>          
   </p>
        
   <p width="150x">
     <%= form.label :Description %><br>
-    <%= form.text_area :ticket_d %>
+    <%= form.text_area :ticket_d, rows: 5, cols: 25 %>
   </p>
   <%#= form.label :User %>    
   <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>

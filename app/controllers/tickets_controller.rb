@@ -30,8 +30,7 @@ class TicketsController < ApplicationController
     @user = User.find(params[:user_id])    
     @ticket = Ticket.new(ticket_params)
     #@ticket = Ticket.find_by(task_id:params[:task_id]) 
-    #@ticket = @user.tasks.tickets.create(ticket_params)    
-
+    
     respond_to do |format|
       if @ticket.save
         format.html { redirect_to @user, notice: 'Ticket was successfully created.' }
