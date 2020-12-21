@@ -7,9 +7,9 @@
   <thead>
     <tr>
       <th width="150px">Task</th>
-      <th width="200px">Description</th>
-      <th width="100px">Updated</th>
-      <th>User</th>
+      <th width="250px">Description</th>
+      <th width="150px">Updated</th>
+      <th width="30px">User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,12 +18,12 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.t_title %></td>
-        <td><%= task.t_descn %></td>
-        <td><%= task.updated_at.localtime.strftime("%H:%M %Y.%m.%d")  %></td>
+        <td><%= task.t_descn.first(50) %></td>
+        <td><%= task.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
         <td><%= task.user_id %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td width="30px"><%= link_to 'Show', task %></td>
+        <td width="30px"><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td width="30px"><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -61,7 +61,7 @@
 <table>
   <thead>
     <tr>
-      <th width="150x" align="left">Task</th>
+      <th width="50x" align="left">Task</th>
       <th width="200px" align="left">Description</th>
       <th width="100px" align="left">Updated</th>
       <th colspan="3"></th>
@@ -105,7 +105,7 @@
   <p>
     <%= form.text_field :user_id, hidden: true %>  
     <%#= form.label :User %>   
-    <%#= form.collection_select(:user_id, User.all, :id, :name, :prompt => true) %>          
+    <%#= form.collection_select(:user_id, User.all, :id, :name, prompt: true) %>          
   </p>
        
   <p width="150x">
