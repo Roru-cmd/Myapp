@@ -54,3 +54,11 @@ aside {
     -webkit-box-sizing: border-box; /* Для Safari и Chrome */
     box-sizing: border-box; /* Для IE и Opera */
 }
+.colh {
+  height: 20px;
+  text-align: right;    
+  color: #000; /* Цвет текста */
+  background: rgb(243, 242, 238); /* Цвет фона */
+  border: 0px solid grey
+  /* padding: 7px; /* Поля вокруг текста */  
+}

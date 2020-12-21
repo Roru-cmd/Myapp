@@ -27,7 +27,7 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    @user = User.find(params[:user_id])    
+    @user = User.find(params[:user_id])       
     @ticket = Ticket.new(ticket_params)
     #@ticket = Ticket.find_by(task_id:params[:task_id]) 
     
@@ -75,6 +75,7 @@ class TicketsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ticket_params
+      #params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end)
       params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end, :user_id)
       #params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end, :user_id, task_id)
     end

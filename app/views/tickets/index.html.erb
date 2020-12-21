@@ -1,6 +1,5 @@
 <% provide(:title, "Tickets") %>
 
-<p id="notice"><%= notice %></p>
 <h1>Tickets</h1>
 
 <table>
@@ -20,8 +19,10 @@
       <tr>
         <td><%= ticket.task_id %></td>
         <td><%= ticket.ticket_d.first(50) %></td>
-        <td><%= ticket.ticket_start.localtime.strftime("%H:%M %Y.%m.%d") %></td>
-        <td><%= ticket.ticket_end.localtime.strftime("%H:%M %Y.%m.%d") %></td>
+        <td><%#= ticket.ticket_start.localtime.strftime("%H:%M %Y.%m.%d") %>
+          <%= ticket.ticket_start %></td>
+        <td><%#= ticket.ticket_end.localtime.strftime("%H:%M %Y.%m.%d") %>
+          <%= ticket.ticket_end %></td>
         <td><%= ticket.user_id %></td>
         <td width="30px"><%= link_to 'Show', ticket %></td>
         <td width="30px"><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
