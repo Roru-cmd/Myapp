@@ -26,15 +26,19 @@
     <%= form.text_area :ticket_d, rows: 10, cols: 50 %>
   </div>
 
-  <div class="field">
-    <%= form.label :ticket_start %>
-    <%= form.datetime_select :ticket_start %>
+  <div>
+    <p><%= form.label :ticket_start %></p>
+    <p><%= form.time_select :ticket_start %></p>
+    <p><%= form.date_select :ticket_start %></p>    
   </div>
-
-  <div class="field">
-    <%= form.label :ticket_end %>
-    <%= form.datetime_select :ticket_end %>
+  
+  <div width="150x">
+    <p><%= form.label :ticket_end %></p>
+    <p><%= form.time_select :ticket_end %></p>
+    <p><%= form.date_select :ticket_end %></p>
+    
   </div>
+  <br>
 
   <div class="actions">
     <%= form.submit %>

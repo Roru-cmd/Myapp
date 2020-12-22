@@ -1,22 +1,21 @@
 <% provide(:title, "Ticket") %>
-<p>
-  <strong>Ticket:</strong>
-  <%= @ticket.ticket_d %>
-</p>
 
 <p>
-  <strong>Task:</strong>
+  <strong>Ticket for Task:</strong>
   <%= @ticket.task_id%>
 </p>
-
+<p>
+  <strong>Description:</strong>
+  <%= @ticket.ticket_d %>
+</p>
 <p>
   <strong>Ticket start:</strong>
-  <%= @ticket.ticket_start %>
+  <%= @ticket.ticket_start.strftime("%H:%M %Y.%m.%d") %>
 </p>
 
 <p>
   <strong>Ticket end:</strong>
-  <%= @ticket.ticket_end %>
+  <%= @ticket.ticket_end.strftime("%H:%M %Y.%m.%d") %>
 </p>
 
 <!-- <p>
