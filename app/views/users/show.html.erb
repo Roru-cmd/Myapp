@@ -87,7 +87,7 @@
 <!-- Creating a New Ticket -->
 
 <div class="right_block">
-<h3>New ticket</h3>
+<h3>New ticket</h3>  
 
 <%= form_with(model: [@user, @user.tickets.build], local: true) do |form| %>
   <p width="150x">
@@ -99,11 +99,6 @@
     <%#= form.text_field :t_title %>
     <%#= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%> <!-- All Tasks -->        
     <%#= form.select :t_title, @user.tasks.each{ |u| [u.t_title] }%>
-  </p>
-  <p>
-    <%= form.text_field :user_id, hidden: true %>  
-    <%#= form.label :User %>   
-    <%#= form.collection_select(:user_id, User.all, :id, :name, prompt: true) %>          
   </p>
        
   <p width="150x">
@@ -126,22 +121,13 @@
     <p><%= form.date_select :ticket_end %>    
   </div>
   <br>
+
+  <%#= form.text_field :user_id, hidden: true %> <!-- User must exist error fix -->
+
   <p>
     <%= form.submit %>
   </p>
 <% end %>
 
-<%#= Time.now.strftime("%H:%M:%S %B %d,%Y") %>
-</div>
-
-<div class="wrapper">
-<p></p>
-<script> /*5 sec. refresh script*/
-  $(document).ready(function() {
-    setTimeout(function() {
-      window.location.reload();
-    }, 5000);
-  });
-</script>
 </div>
 
