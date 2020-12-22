@@ -113,12 +113,25 @@
   <%#= form.label :User %>    
   <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>
 
+  <div>
+    <p><%= form.label :ticket_start %></p>
+    <%= form.date_select :ticket_start %>
+    <%= form.time_select :ticket_start %>
+  </div>
+  <p> </p>
+
+  <div>
+    <p><%= form.label :ticket_end %></p>
+    <%= form.date_select :ticket_end %>
+    <%= form.time_select :ticket_end %>
+  </div>
+  <br>
   <p>
     <%= form.submit %>
   </p>
 <% end %>
 
-<%= Time.now.strftime("%H:%M:%S %B %d,%Y") %>
+<%#= Time.now.strftime("%H:%M:%S %B %d,%Y") %>
 </div>
 
 <div class="wrapper">
