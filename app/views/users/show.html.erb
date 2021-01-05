@@ -94,7 +94,7 @@
     <%= form.label :Select_a_task %>
   </p>
   <p>
-    <%= form.collection_select(:task_id, @user.tasks, :id, :t_title) %>  <!-- Currrent user tasks-->
+    <%= form.collection_select(:task_id, @user.tasks, :id, :t_title ) %>  <!-- Currrent user tasks. Works, but do not save ID -->
     <%#= form.text_field :task_id%>   
     <%#= form.text_field :t_title %>
     <%#= form.select :t_title, Task.all.collect{ |u| [u.t_title] }%> <!-- All Tasks -->        
@@ -103,7 +103,8 @@
        
   <p width="150x">
     <%= form.label :Description %><br>
-    <%= form.text_area :ticket_d, rows: 5, cols: 25 %>
+    <%= form.text_area :ticket_d, size: "25x5" %> <!-- same as below -->
+    <%#= form.text_area :ticket_d, rows: 5, cols: 25 %>
   </p>
   <%#= form.label :User %>    
   <%#= form.select :user_id, User.all.collect{ |u| [u.name, u.id ] }%>

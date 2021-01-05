@@ -27,11 +27,11 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
+    @ticket = Ticket.new(ticket_params) # Work but error User must exist
     #@user = User.find(user_id: params[:user_id]) 
     @user = User.find(params[:user_id])   
     @ticket = @user.tickets.build(ticket_params)
-    #@user = User.find(params[:user_id]) # Error "User Must Exist" if has_many :tickets, through: :tasks
-    #@ticket = Ticket.new(ticket_params) # Work but error User must exist
+    #@user = User.find(params[:user_id]) # Error "User Must Exist" if has_many :tickets, through: :tasks    
     # @user = Task.find_by(user_id:params[:task_id]) # Do not work
     # @user = Task.find_by(user_id:params[:user_id]) # Error
     # @ticket = @user.tasks.create(ticket_params) # Error    

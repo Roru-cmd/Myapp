@@ -13,12 +13,14 @@
 
   <div class="field">
     <%= form.label :User_id %>
-    <%= form.text_field :user_id %>
+    <%#= form.text_field :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name, {:prompt => '-- Select a User --'} %>
   </div>
 
   <div class="field">
     <%= form.label :Task_id %>
-    <%= form.text_field :task_id %>
+    <%#= form.text_field :task_id %>
+    <%= form.collection_select :task_id, Task.all, :id, :t_title, {:prompt => '-- Select a Task --'} %>
   </div>
 
   <div class="field">
