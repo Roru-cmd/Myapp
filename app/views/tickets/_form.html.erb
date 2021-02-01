@@ -21,6 +21,7 @@
     <%= form.label :Task_id %>
     <%#= form.text_field :task_id %>
     <%= form.collection_select :task_id, Task.all, :id, :t_title, {:prompt => '-- Select a Task --'} %>
+    <%#= form.collection_select :task_id, @user.tasks, :id, :t_title, {:prompt => '-- Select a Task --'} %>
   </div>
 
   <div class="field">
