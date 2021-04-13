@@ -1,3 +1,19 @@
 // Place all the styles related to the Tickets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.desc { 
+    width: 70%; /* Ширина */
+    background: rgb(243, 242, 238); /* Цвет фона */
+    padding: 20px; /* Поля */
+    font-size: 1.1em;
+    -moz-box-sizing: border-box; /* Для Firefox */
+    -webkit-box-sizing: border-box; /* Для Safari и Chrome */
+    box-sizing: border-box; /* Для IE и Opera */
+}
+
+.butt {  /* Table for Buttons and links*/
+    width: 150px;
+    height: 50px;
+    border-collapse: collapse;
+    border: 2px solid white;
+}

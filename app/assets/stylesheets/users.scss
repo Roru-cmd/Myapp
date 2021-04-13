@@ -1,23 +1,6 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
-TABLE {
-    font-family: verdana, arial, helvetica, sans-serif;
-    border-collapse: collapse; /* Убираем двойные линии между ячейками */
-}
-TD, TH {
-  padding: 0.5em; /* Поля вокруг содержимого таблицы */
-  border: 1px solid black; /* Параметры рамки */
-}
-TH {
-  background: #b0e0e6; /* Цвет фона */
-  font-weight: 600;
-  font-size: 1.1em;
-  text-transform: uppercase;
-}
-
-
 /* users/index ================================ */
 .users-heading {
   font-weight: 300;
@@ -134,4 +117,3 @@ TH {
 .users-form input {
   margin-bottom: 15px;
 }
-      
