@@ -11,14 +11,14 @@
   </head>
 
   <body>
-  <%# unless controller_name == 'users'%> 
+  <%# unless controller_name == 'users'%>   
+
   <% if current_page?(users_path)%> 
     <%= yield%>
     <%else%>
     <%= render 'layouts/header' %>
     <%= yield %>
   <% end %>
-  <%= render "layouts/footer" %>
-  
+  <%#= render "layouts/footer" %>  
   </body>
 </html>
