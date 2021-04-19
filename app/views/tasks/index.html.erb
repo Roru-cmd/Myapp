@@ -1,6 +1,9 @@
 <% provide(:title, "Tasks") %>
 
-<h1>Tasks</h1>
+<div class="main users-index">
+<div class="container">
+<h1 class="users-heading">Tasks</h1>
+<%= link_to 'New Task', new_task_path %>
 <table>
   <thead>
     <tr>
@@ -16,7 +19,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.t_title %></td>
-        <td><%= task.t_descn.first(50) %></td>
+        <td><%= task.t_descn %><%#= task.t_descn.first(50) %></td>
         <td><%= task.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
         <td><%= task.user_id %></td>
         <td width="30px"><%= link_to 'Show', task %></td>
@@ -26,8 +29,9 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 
-<br>
 
-<%= link_to 'New Task', new_task_path %> | 
-<%= link_to 'Back to Users', users_path %> 
+
+

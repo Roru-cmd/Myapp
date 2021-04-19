@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
     def current_user  
       #debugger
       @current_user ||= User.find(@task[:user_id])
-      
+      #@current_user = User.find_by(id: session[:user_id])
+      #@current_user = User.find_by(params[:id])
     end
 end
  

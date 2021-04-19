@@ -1,7 +1,9 @@
 <% provide(:title, "Tickets") %>
 
-<h1>Tickets</h1>
-
+<div class="main users-index">
+<div class="container">
+<h1 class="users-heading">Tickets</h1>
+<%= link_to 'New Ticket', new_ticket_path %>
 <table>
   <thead>
     <tr>
@@ -31,7 +33,6 @@
     <% end %>
   </tbody>
 </table>
+</div>
+</div>
 
-<br>
-
-<%= link_to 'New Ticket', new_ticket_path %>

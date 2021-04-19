@@ -1,0 +1,25 @@
+<% provide(:title, "Task") %>
+  
+<h1><%= current_user.name %></h1>
+<%#= @task.user_id %>
+<br></br>
+
+<div>
+  <strong>TASK:</strong> &ensp; 
+  <strong><%= @task.t_title %></strong>
+</div>
+<br></br>
+<div>
+  <strong >DESCRIPTION:</strong>
+  <p class="desc"><%= @task.t_descn %></p>
+</div>
+
+<table >
+<td class="butt"><%= button_to 'EDIT TASK', edit_task_path(@task), method: :get%></td>
+<td class="butt"><%= link_to 'Delete Task', @task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</table>
+
+<%#= link_to 'Edit Task', edit_task_path(@task) %> 
+<%#= link_to 'Back to All users', users_path %> 
+<%= link_to 'Back to User', user_path(@task.user_id) %> 
+

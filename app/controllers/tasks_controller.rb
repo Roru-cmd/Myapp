@@ -28,16 +28,23 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     #@user = User.find(params[:task][:user_id])    
-    @user = User.find(params[:user_id]) 
-    @task = @user.tasks.create(task_params)
+    #@user = User.find(params[:user_id]) 
+    #@task = @user.tasks.create(task_params)
+    #@task = Task.new(task_params)
+    @task = Task.new(
+      t_title: params[:t_title], 
+      t_descn: params[:t_descn], 
+      user_id: @user.id
+    )
+
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @user, notice: 'Task was successfully created.' }
+        format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -75,6 +82,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:t_title, :t_descn, :user_id, :ticket_ids)
+      #params.require(:task).permit(:t_title, :t_descn, :user_id, :ticket_ids)      
     end
 end

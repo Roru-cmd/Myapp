@@ -1,25 +1,30 @@
 <% provide(:title, "Task") %>
+
+<div class="main posts-show">
+  <div class="container">
+        <div class="post-user-name">
+        <!--  <img src="<%#= "/user_images/#{@user.image_name}" %>">  -->        
+        <%#= link_to(@user.name, "/users/#{@user.id}") %>
+        <h1><%= link_to current_user.name, user_path(@task.user_id) %> </h1>
+      </div>    
+    <div class="posts-show-item">
+    
+      <h3><%= @task.t_title %></h3>
+      <p><%= @task.t_descn %></p>
+      
+      <div class="post-time">
+        <%= @task.updated_at.localtime.strftime("%H:%M %Y.%m.%d")%>
+      </div>
+
+      <%# if @task.user_id == @current_user.id %>
+        <div class="post-menus">        
+          <%= link_to("Edit", "/tasks/#{@task.id}/edit") %>|
+          <%= link_to("Delete", "/tasks/#{@task.id}/destroy", {method: "post"}) %>
+        </div>
+      <%# end %>
+    </div>
+  </div>
+</div>
   
-<h1><%= current_user.name %></h1>
-<%#= @task.user_id %>
-<br></br>
 
-<div>
-  <strong>TASK:</strong> &ensp; 
-  <strong><%= @task.t_title %></strong>
-</div>
-<br></br>
-<div>
-  <strong >DESCRIPTION:</strong>
-  <p class="desc"><%= @task.t_descn %></p>
-</div>
-
-<table >
-<td class="butt"><%= button_to 'EDIT TASK', edit_task_path(@task), method: :get%></td>
-<td class="butt"><%= link_to 'Delete Task', @task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-</table>
-
-<%#= link_to 'Edit Task', edit_task_path(@task) %> 
-<%#= link_to 'Back to All users', users_path %> 
-<%= link_to 'Back to User', user_path(@task.user_id) %> 
 

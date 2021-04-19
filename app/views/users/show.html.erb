@@ -2,11 +2,12 @@
 <div class="main user-show">
   <div class="container">
     <div class="user">
-      <h2><%= @user.name %></h2>
+      <h2><%= @user.name %></h2>         
       <%= link_to("Edit","/users/#{@user.id}/edit") %> |      
-      <%= link_to("Delete","/users/#{@user.id}/destroy", {method: "post"}) %> |        
+      <%= link_to("Delete","/users/#{@user.id}/destroy", {method: "post"}) %> |   
+      <%= link_to 'New Task', new_task_path %>     
     </div>  
-    <% @user.tasks.each do |a| %>
+    <% @user.tasks.each do |a| %>        
       <div class="posts-index-item">
         <div class="post-right"> 
           <div class="post-user-name">              
