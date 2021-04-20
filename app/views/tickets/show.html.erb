@@ -2,11 +2,10 @@
 
 <div class="main posts-show">
   <div class="container">
-    <div class="post-user-name">
-     <h1><%#= link_to current_user.name, user_path(@task.user_id) %> </h1>
+    <div class="post-user-name">      
+     <h1><%= link_to @ticket.task_id, task_path(@ticket.task_id) %> <%#= link_to current_user.name, user_path(@task.user_id) %> </h1>
     </div> 
-    <div class="posts-show-item">
-      <%= @ticket.task_id%>  
+    <div class="posts-show-item">       
       <%= @ticket.ticket_d %>
       <div class="post-time">
       <p>
@@ -27,7 +26,7 @@
           <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
           <%= link_to 'Back', tickets_path %> |
           <%#= link_to 'Back to User', user_path(@ticket.user_id) %> 
-          <%= link_to 'Destroy', @ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Delete', @ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       </div>
     </div>    

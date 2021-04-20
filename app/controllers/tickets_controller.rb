@@ -27,26 +27,25 @@ class TicketsController < ApplicationController
   # POST /tickets
   # POST /tickets.json
   def create
-    #@ticket = Ticket.new(ticket_params)
+    @ticket = Ticket.new(ticket_params)
+    @ticket.user_id = session[:user_id] 
+    @ticket.task_id = session[:task_id]
     #@user = User.find(user_id: params[:user_id]) 
-    @user = User.find(params[:user_id])    #work   
-    @ticket = @user.tickets.build(ticket_params)
+    #@user = User.find(params[:user_id])    #work   
+    #@ticket = @user.tickets.build(ticket_params)
     # @user = User.find(params[:user_id]) # Error "User Must Exist" if has_many :tickets, through: :tasks    
     # @user = Task.find_by(user_id:params[:task_id]) # Do not work
     # @user = Task.find_by(user_id:params[:user_id]) # Error
     # @ticket = @user.tasks.create(ticket_params) # Error    
     # @ticket = Ticket.find_by(task_id:params[:task_id]) 
-    
-    respond_to do |format|
-      if @ticket.save
-        format.html { redirect_to @user, notice: 'Ticket was successfully created.' }
-        format.json { render :show, status: :created, location: @ticket }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+
+  if @ticket.save
+    flash[:notice] = "Ticket successfully created"    
+    redirect_to("/tasks/#{@ticket.task_id}")
+  else
+    render("tickets/new")
   end
+end
 
   # PATCH/PUT /tickets/1
   # PATCH/PUT /tickets/1.json
@@ -81,8 +80,8 @@ class TicketsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ticket_params
-      #params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end)
-      params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end, :user_id)
+      params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end)
+      #params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end, :user_id)
       #params.require(:ticket).permit(:ticket_d, :ticket_start, :ticket_end, :user_id, task_id)
     end
 end

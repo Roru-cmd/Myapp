@@ -13,37 +13,21 @@
             </ul>
           </div>
         <% end %>
-
         <div class="field">
-          <%= form.label :User_id %>
-          <%#= form.text_field :user_id %>
-          <%= form.collection_select :user_id, User.all, :id, :name, {:prompt => '-- Select a User --'} %>
+          <%= form.label :Description %>
+          <%= form.text_area :ticket_d %>
         </div>
-
-       <div class="field">
-         <%= form.label :Task_id %>
-         <%#= form.text_field :task_id %>
-         <%= form.collection_select :task_id, Task.all, :id, :t_title, {:prompt => '-- Select a Task --'} %>
-         <%#= form.collection_select :task_id, @user.tasks, :id, :t_title, {:prompt => '-- Select a Task --'} %>
-        </div>
-
-         <div class="field">
-           <%= form.label :Description %>
-           <%= form.text_area :ticket_d %>
-         </div>
-
-         <div>
-           <p><%= form.label :ticket_start %></p>
-           <p><%= form.time_select :ticket_start %></p>
-           <p><%= form.date_select :ticket_start %></p>    
-         </div>
-  
-         <div width="150x">
-           <p><%= form.label :ticket_end %></p>
-           <p><%= form.time_select :ticket_end %></p>
-           <p><%= form.date_select :ticket_end %></p>    
-         </div>         
-         <%= form.submit %>
+        <div>
+         <p><%= form.label :ticket_start %></p>
+         <p><%= form.time_select :ticket_start %></p>
+         <p><%= form.date_select :ticket_start %></p> 
+         </div>  
+        <div width="150x">
+          <p><%= form.label :ticket_end %></p>
+          <p><%= form.time_select :ticket_end %></p>
+          <p><%= form.date_select :ticket_end %></p>    
+        </div>         
+        <%= form.submit %>
        </div>
      </div>
     <% end %>

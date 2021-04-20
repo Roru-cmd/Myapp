@@ -10,7 +10,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/1
   # GET /tasks/1.json
-  def show   
+  def show  
+    session[:task_id] = @task.id 
   end
 
   # GET /tasks/new

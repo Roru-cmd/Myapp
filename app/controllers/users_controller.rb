@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def home
     session[:user_id] = nil
+    session[:task_id] = nil
     @users = User.all
     @user = User.find_by(id: params[:id])
   end
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    session[:task_id] = nil
     @user = User.find(params[:id])    
     @task = @user.tasks
     @tasks = @task.order('updated_at DESC')
