@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def home
+    session[:user_id] = nil
     @users = User.all
     @user = User.find_by(id: params[:id])
   end
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
     @tasks = @task.order('updated_at DESC')
     @ticket = @user.tickets
     @tickets = @ticket.order('updated_at DESC')
+    session[:user_id] = @user.id
   end
 
   # GET /users/new
@@ -76,7 +78,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find(params[:id])      
     end
 
     # Only allow a list of trusted parameters through.

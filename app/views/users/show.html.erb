@@ -2,7 +2,7 @@
 <div class="main user-show">
   <div class="container">
     <div class="user">
-      <h2><%= @user.name %></h2>         
+      <h2><%= @user.name %></h2>             
       <%= link_to("Edit","/users/#{@user.id}/edit") %> |      
       <%= link_to("Delete","/users/#{@user.id}/destroy", {method: "post"}) %> |   
       <%= link_to 'New Task', new_task_path %>     
@@ -12,9 +12,8 @@
         <div class="post-right"> 
           <div class="post-user-name">              
             <p><%= link_to a.t_title, a %></p>
-          </div>
-          <p><%#= link_to(a.t_title.first(100), "/tasks/#{task.id}") %></p>
-          <p><%= a.t_descn.first(100) %></p>
+          </div>          
+          <p><%= a.t_descn %><%#= a.t_descn.first(100) %></p>
           <div class="post-time">
             <p><%= a.updated_at.localtime.strftime("%H:%M %Y.%m.%d")%></p>
           </div>

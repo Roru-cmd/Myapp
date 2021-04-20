@@ -10,9 +10,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1
   # GET /tasks/1.json
-  def show
-    #@task = Task.find_by(user_id:params[:user_id])
-    #@task = Task.find(params[:user_id])     
+  def show   
   end
 
   # GET /tasks/new
@@ -26,18 +24,9 @@ class TasksController < ApplicationController
 
   # POST /tasks
   # POST /tasks.json
-  def create
-    #@user = User.find(params[:task][:user_id])    
-    #@user = User.find(params[:user_id]) 
-    #@task = @user.tasks.create(task_params)
-    #@task = Task.new(task_params)
-    @task = Task.new(
-      t_title: params[:t_title], 
-      t_descn: params[:t_descn], 
-      user_id: @user.id
-    )
-
-
+  def create 
+    @task = Task.new(task_params)
+    @task.user_id = session[:user_id]     
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
@@ -54,6 +43,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
+      #if @task.update(t_title: params[:t_title], t_descn: params[:t_descn])
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
@@ -82,6 +72,7 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      #params.require(:task).permit(:t_title, :t_descn, :user_id, :ticket_ids)      
+      #params.require(:task).permit(:t_title, :t_descn, :user_id, :ticket_ids)   
+      params.require(:task).permit(:t_title, :t_descn)    
     end
 end

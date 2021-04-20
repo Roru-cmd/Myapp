@@ -28,6 +28,9 @@
     <%#= link_to 'new task', new_task_path %> 
     <%#= link_to 'new ticket', new_ticket_path %>
     <%# end %>
+   <% if session[:user_id] %>
+     user_id: <%= session[:user_id] %>
+   <% end %> 
     </td>
     <td id="notice" align ="center"><%= notice %></td>
     <td width="330px" >
