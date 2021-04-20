@@ -16,7 +16,7 @@
           </div>          
           <p><%= a.t_descn.first(100) %></p>
           <div class="post-time">
-            <p><%= a.updated_at.localtime.strftime("%H:%M %Y.%m.%d")%></p> 
+            <p>Last update: <%= a.updated_at.localtime.strftime(" %Y.%m.%d, %H:%M")%></p> 
           </div>
         </div>
       </div>

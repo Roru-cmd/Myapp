@@ -12,13 +12,14 @@
       <p><%= @task.t_descn %></p>
       
       <div class="post-time">
-        <%= @task.updated_at.localtime.strftime("%H:%M %Y.%m.%d")%>
+        <%= @task.updated_at.localtime.strftime("%Y.%m.%d, %H:%M")%>
       </div>
 
       <%# if @task.user_id == @current_user.id %>
         <div class="post-menus">        
-          <%= link_to("Edit", "/tasks/#{@task.id}/edit") %>|
-          <%= link_to("Delete", "/tasks/#{@task.id}/destroy", {method: "post"}) %>|
+          <%= link_to("Edit", "/tasks/#{@task.id}/edit") %>|          
+          <%#= link_to("Delete", "/tasks/#{@task.id}/destroy", {method: "post"}) %> <!--no confirmation -->
+          <%= link_to 'Delete', @task, method: :delete, data: { confirm: 'Are you sure?' } %> |
           <%= link_to 'New Ticket', new_ticket_path %> 
         </div>
       <%# end %>                  
@@ -30,6 +31,16 @@
         <div class="users-index-item">
           <div class="user-right">
             <%= link_to ticket.ticket_d.first(50), ticket %>
+            <div class="post-time">
+              Last update: <%= ticket.updated_at.localtime.strftime("%Y.%m.%d, %H:%M")%> </p> 
+              </div>
+              <%#= link_to("Edit", "/tickets/#{ticket.id}/edit") %> 
+              <div class="post-menus"> 
+                <%= link_to 'Edit', edit_ticket_path(ticket) %> |
+                <%#= link_to 'Back', tickets_path %> 
+                <%#= link_to 'Back to User', user_path(@ticket.user_id) %> 
+                <%= link_to 'Delete', ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>           
           </div>
         </div>
       <% end %>     

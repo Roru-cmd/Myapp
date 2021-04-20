@@ -1,6 +1,9 @@
 <div class="main posts-new">
   <div class="container">
-    <h1 class="form-heading">Create a new ticket</h1>
+    <h1 class="form-heading">Ticket</h1>
+    <% if @ticket.id %>
+      <%= link_to 'Back to ticket', ticket_path(@ticket.id) %>     
+    <% end %>
     <%= form_with(model: ticket, local: true) do |form| %>
       <div class="form">
       <div class="form-body">
