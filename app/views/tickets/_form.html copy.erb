@@ -1,0 +1,49 @@
+<%= form_with(model: ticket, local: true) do |form| %>
+  <% if ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+        <% ticket.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :User_id %>
+    <%#= form.text_field :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name, {:prompt => '-- Select a User --'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Task_id %>
+    <%#= form.text_field :task_id %>
+    <%= form.collection_select :task_id, Task.all, :id, :t_title, {:prompt => '-- Select a Task --'} %>
+    <%#= form.collection_select :task_id, @user.tasks, :id, :t_title, {:prompt => '-- Select a Task --'} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Description %>
+    <%= form.text_area :ticket_d, rows: 10, cols: 50 %>
+  </div>
+
+  <div>
+    <p><%= form.label :ticket_start %></p>
+    <p><%= form.time_select :ticket_start %></p>
+    <p><%= form.date_select :ticket_start %></p>    
+  </div>
+  
+  <div width="150x">
+    <p><%= form.label :ticket_end %></p>
+    <p><%= form.time_select :ticket_end %></p>
+    <p><%= form.date_select :ticket_end %></p>
+    
+  </div>
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -4,7 +4,8 @@
     <div class="user">
       <h2><%= @user.name %></h2>             
       <%= link_to("Edit","/users/#{@user.id}/edit") %> |      
-      <%= link_to("Delete","/users/#{@user.id}/destroy", {method: "post"}) %> |   
+      <%#= link_to("Delete","/users/#{@user.id}/destroy", {method: "post"}) %>
+      <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
       <%= link_to 'New Task', new_task_path %>     
     </div>  
     <% @user.tasks.each do |a| %>        

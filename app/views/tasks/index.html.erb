@@ -3,26 +3,21 @@
 <div class="main users-index">
 <div class="container">
 <h1 class="users-heading">Tasks</h1>
-<%= link_to 'New Task', new_task_path %>
+<%#= link_to 'New Task', new_task_path %>
 
 <table>
-
   <thead>
     <tr>
-      <th width="150px">Task</th>
-      <th width="250px">Description</th>
-      <th width="150px">Updated</th>
-      <th width="30px">User</th>
+      <th width="150px" align="left">Task</th>
+      <th width="250px" align="left">Description</th>
+      <th width="150px" align="left">Updated</th>
+      <th width="30px" align="left">user_id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-
     <% @tasks.each do |task| %>
-
       <tr>
-
         <td><%= link_to task.t_title, task %></td>
         <td><%= task.t_descn.first(50) %></td>
         <td><%= task.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
@@ -32,7 +27,6 @@
         <td width="30px"><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       -->
       </tr>
-
     <% end %>
   </tbody>
 </table>

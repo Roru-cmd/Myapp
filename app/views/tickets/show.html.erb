@@ -1,28 +1,35 @@
 <% provide(:title, "Ticket") %>
 
-<p>
-  <strong>Ticket for Task:</strong>
-  <%= @ticket.task_id%>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @ticket.ticket_d %>
-</p>
-<p>
-  <strong>Ticket start:</strong>
-  <%= @ticket.ticket_start.strftime("%H:%M %Y.%m.%d") %>
-</p>
-
-<p>
-  <strong>Ticket end:</strong>
-  <%= @ticket.ticket_end.strftime("%H:%M %Y.%m.%d") %>
-</p>
-
-<!-- <p>
-  <strong>User:</strong>
-  <%= @ticket.user_id %>
-</p> -->
-
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%#= link_to 'Back', tickets_path %>
-<%= link_to 'Back to User', user_path(@ticket.user_id) %> 
+<div class="main posts-show">
+  <div class="container">
+    <div class="post-user-name">
+     <h1><%#= link_to current_user.name, user_path(@task.user_id) %> </h1>
+    </div> 
+    <div class="posts-show-item">
+      <%= @ticket.task_id%>  
+      <%= @ticket.ticket_d %>
+      <div class="post-time">
+      <p>
+        <strong>Started at: </strong><%= @ticket.ticket_start.strftime("%H:%M %Y.%m.%d") %>
+        </p> 
+        <p>
+        <strong>Finished at: </strong><%= @ticket.ticket_end.strftime("%H:%M %Y.%m.%d") %>
+        </p>
+        <p>
+        <strong>user_id:</strong>
+          <%= @ticket.user_id %>
+        </p> 
+        <p>
+        <strong>task_id:</strong>
+          <%= @ticket.task_id %>
+        </p> 
+        <div class="post-menus"> 
+          <%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+          <%= link_to 'Back', tickets_path %> |
+          <%#= link_to 'Back to User', user_path(@ticket.user_id) %> 
+          <%= link_to 'Destroy', @ticket, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>

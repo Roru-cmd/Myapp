@@ -2,11 +2,11 @@
 
 <div class="main posts-show">
   <div class="container">
-        <div class="post-user-name">
-        <!--  <img src="<%#= "/user_images/#{@user.image_name}" %>">  -->        
-        <%#= link_to(@user.name, "/users/#{@user.id}") %>
-        <h1><%= link_to current_user.name, user_path(@task.user_id) %> </h1>
-      </div>    
+    <div class="post-user-name">
+      <!--  <img src="<%#= "/user_images/#{@user.image_name}" %>">  -->        
+      <%#= link_to(@user.name, "/users/#{@user.id}") %>
+      <h1><%= link_to current_user.name, user_path(@task.user_id) %> </h1>
+    </div>    
     <div class="posts-show-item">
     
       <h3><%= @task.t_title %></h3>
@@ -19,7 +19,8 @@
       <%# if @task.user_id == @current_user.id %>
         <div class="post-menus">        
           <%= link_to("Edit", "/tasks/#{@task.id}/edit") %>|
-          <%= link_to("Delete", "/tasks/#{@task.id}/destroy", {method: "post"}) %>
+          <%= link_to("Delete", "/tasks/#{@task.id}/destroy", {method: "post"}) %>|
+          <%= link_to 'New Ticket', new_ticket_path %> 
         </div>
       <%# end %>
     </div>
