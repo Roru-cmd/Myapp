@@ -1,5 +1,4 @@
 <% provide(:title, "Task") %>
-
 <div class="main posts-show">
   <div class="container">
     <div class="post-user-name">
@@ -22,10 +21,22 @@
           <%= link_to("Delete", "/tasks/#{@task.id}/destroy", {method: "post"}) %>|
           <%= link_to 'New Ticket', new_ticket_path %> 
         </div>
-      <%# end %>
+      <%# end %>                  
+    </div>
+    
+    <div class="container">
+      <h3>Tickets</h3>
+      <% @task.tickets.each do |ticket| %> 
+        <div class="users-index-item">
+          <div class="user-right">
+            <%= link_to ticket.ticket_d.first(50), ticket %>
+          </div>
+        </div>
+      <% end %>     
     </div>
   </div>
 </div>
-  
+
+
 
 

@@ -24,20 +24,16 @@
 <table width="100%" cellspacing="0" >
  <tr height="60px">
     <td width="250px" >
-    <%# if @current_user.name %>
-    <%#= link_to 'new task', new_task_path %> 
-    <%#= link_to 'new ticket', new_ticket_path %>
-    <%# end %>
-   <% if session[:user_id] %>
-     user_id: <%= session[:user_id] %>
-   <% end %> 
-   <% if session[:task_id] %>
-     ; task_id: <%= session[:task_id] %>
-   <% end %> 
+
+   <!-- <%# if session[:user_id] %>
+     user_id: <%#= session[:user_id] %>
+   <%# end %> 
+   <%# if session[:task_id] %>
+     ; task_id: <%#= session[:task_id] %>
+   <%# end %> -->
     </td>
     <td id="notice" align ="center"><%= notice %></td>
     <td width="330px" >
-    <%#= link_to 'Back to All Users', users_path %>
     <%= link_to("all users","/") %>
     <%= link_to("new user", new_user_path) %> [
     <%= link_to 'tasks', tasks_path %>

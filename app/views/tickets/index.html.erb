@@ -23,12 +23,14 @@
       <tr> 
         <td><%= link_to ticket.ticket_d.first(50), ticket %></td>
         <td><%= ticket.updated_at.localtime.strftime("%H:%M %Y.%m.%d") %></td>
-        <!-- <td><%= ticket.ticket_start.localtime.strftime("%H:%M %Y.%m.%d") %></td>          
+        <!-- 
+        <td><%= ticket.ticket_start.localtime.strftime("%H:%M %Y.%m.%d") %></td>          
         <td><%= ticket.ticket_end.localtime.strftime("%H:%M %Y.%m.%d") %></td>
         -->
         <td><%= ticket.user_id %></td>
         <td><%= ticket.task_id %></td>
-        <!-- <td width="30px"><%#= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- 
+        <td width="30px"><%#= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         -->
       </tr>
     <% end %>
