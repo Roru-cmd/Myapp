@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
-    @tasks = Task.order('updated_at DESC') 
+    @tasks = Task.order('updated_at DESC')
   end
 
   # GET /tasks/1
