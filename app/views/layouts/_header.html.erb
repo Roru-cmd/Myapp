@@ -25,12 +25,12 @@
  <tr height="60px">
     <td width="250px" >
 
-   <!-- <%# if session[:user_id] %>
-     user_id: <%#= session[:user_id] %>
-   <%# end %> 
-   <%# if session[:task_id] %>
-     ; task_id: <%#= session[:task_id] %>
-   <%# end %> -->
+  <% if session[:user_id] %>
+     user_id: <%= session[:user_id] %>
+   <% end %> 
+   <% if session[:task_id] %>
+     ; task_id: <%= session[:task_id] %>
+   <% end %> 
     </td>
     <td id="notice" align ="center"><%= notice %></td>
     <td width="330px" >

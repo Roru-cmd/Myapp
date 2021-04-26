@@ -1,9 +1,13 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">Ticket</h1>
+    <div class="post-user-name"> 
     <% if @ticket.id %>
-      <%= link_to 'Back to ticket', ticket_path(@ticket.id) %>     
+      <%= link_to 'Back to ticket', ticket_path(@ticket.id) %> 
+    <% else %>      
+      <%= link_to 'Back to task', "/tasks/#{session[:task_id]}" %>
     <% end %>
+    </div>
     <%= form_with(model: ticket, local: true) do |form| %>
       <div class="form">
       <div class="form-body">
