@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get "/" => "users#home"   
   post "users/:id/destroy" => "users#destroy"
   get "users/:id/tickets" => "users#tickets"
+  get "users/:id/today" => "users#today"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 

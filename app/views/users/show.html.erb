@@ -12,6 +12,7 @@
     <ul class="user-tabs">
       <li class="active"><%= link_to("Tasks", "/users/#{@user.id}") %></li>
       <li><%= link_to("Tickets", "/users/#{@user.id}/tickets") %></li>
+      <li><%= link_to("Today", "/users/#{@user.id}/today") %></li>
     </ul>
 
     <% @user.tasks.each do |a| %>        

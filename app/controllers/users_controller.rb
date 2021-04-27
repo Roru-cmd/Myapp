@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :tickets, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :tickets, :today]
 
   # GET /users
   # GET /users.json
@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     session[:task_id] = nil
     @users = User.all
     @user = User.find_by(id: params[:id])
+    @users = User.order('name')
   end
 
   # GET /users/1
@@ -25,11 +26,8 @@ class UsersController < ApplicationController
     @task = @user.tasks
     @tasks = @task.order('updated_at DESC')
     @ticket = @user.tickets
-    @tickets = @ticket.order('updated_at DESC')
+    @tickets = @ticket.order('updated_at')
     session[:user_id] = @user.id
-  end
-
-  def tickets
   end
 
   # GET /users/new
@@ -78,6 +76,13 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:notice] = "User successfully deleted"
     redirect_to("/")
+  end
+
+  def tickets
+    @tickets = Ticket.order('updated_at')
+  end
+
+  def today
   end
 
   private
