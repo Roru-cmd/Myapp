@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :tickets, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -27,6 +27,9 @@ class UsersController < ApplicationController
     @ticket = @user.tickets
     @tickets = @ticket.order('updated_at DESC')
     session[:user_id] = @user.id
+  end
+
+  def tickets
   end
 
   # GET /users/new

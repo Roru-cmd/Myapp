@@ -8,6 +8,12 @@
       <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
       <%= link_to 'New Task', new_task_path %>     
     </div>  
+
+    <ul class="user-tabs">
+      <li class="active"><%= link_to("Tasks", "/users/#{@user.id}") %></li>
+      <li><%= link_to("Tickets", "/users/#{@user.id}/tickets") %></li>
+    </ul>
+
     <% @user.tasks.each do |a| %>        
       <div class="posts-index-item">
         <div class="post-right"> 
