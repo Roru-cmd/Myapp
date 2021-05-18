@@ -4,4 +4,5 @@ class User < ApplicationRecord
             length: { maximum: 50 }
   has_many :tickets, dependent: :destroy
   #has_many :tickets, through: :tasks, dependent: :destroy  # Show only Tickets for User's Tasks
+
 end

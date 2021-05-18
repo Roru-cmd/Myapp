@@ -1,7 +1,8 @@
 FactoryBot.define do
-    factory :ticket do
-      sequence(:name)   { |n| "Ticket #{n}" }
+    factory :user do
+      sequence(:name)   { |n| "User #{n}" }
       created_at        { Time.now }
       updated_at        { Time.now }
+      task  
     end
 end
