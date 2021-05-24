@@ -1,7 +1,7 @@
 FactoryBot.define do
 
   factory :user do      
-      sequence(:name)         { |n| "User#{n}" }
+      sequence(:name)         { |n| "User #{n}" }
       time                    { Time.now }                
       created_at              { Time.now }
       updated_at              { Time.now }
