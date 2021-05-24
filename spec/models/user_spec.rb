@@ -12,12 +12,12 @@ RSpec.describe User, :type => :model do
     end
 
     it "has uniqe username" do          
-        user2 = build(:user, name: nil)
-        expect(user2).not_to be_valid
+        user2 = build(:user, :number)
+        expect(user2).to be_valid
     end
 
     it "is not valid without a time" do
-        user2 = build(:user, :number, time: nil)
+        user2 = build(:user, time: nil)
         expect(user2).not_to be_valid
     end
 
