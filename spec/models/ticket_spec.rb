@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Ticket, :type => :model do
 
-    #before(:all) do
-        #@ticket1 = create(:ticket, :number)        
-    #end
-
     it "is valid with valid attributes" do
       @ticket1 = create(:ticket, :number)
       expect(@ticket1).to be_valid

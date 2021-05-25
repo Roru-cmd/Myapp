@@ -1,3 +1,0 @@
-current directory: /home/tech/Documents/Myapp/vendor/bundle/ruby/2.7.0/gems/mimemagic-0.3.10/ext/mimemagic
-/home/tech/.rvm/rubies/ruby-2.7.0/bin/ruby -I/home/tech/.rvm/rubies/ruby-2.7.0/lib/ruby/site_ruby/2.7.0 -rrubygems /home/tech/Documents/Myapp/vendor/bundle/ruby/2.7.0/gems/rake-13.0.1/exe/rake RUBYARCHDIR\=/home/tech/Documents/Myapp/vendor/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/mimemagic-0.3.10 RUBYLIBDIR\=/home/tech/Documents/Myapp/vendor/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/mimemagic-0.3.10
-mkdir -p /home/tech/Documents/Myapp/vendor/bundle/ruby/2.7.0/extensions/x86_64-linux/2.7.0/mimemagic-0.3.10/mimemagic

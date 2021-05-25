@@ -37,3 +37,4 @@ RSpec.describe Task, :type => :model do
         #expect(task2).to belong_to(:user)
     #end
 end
+
