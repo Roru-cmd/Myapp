@@ -2,3 +2,7 @@ node_modules
 /tmp
 /log
 /vendor
+
+## Environment normalization:
+/.bundle
+/vendor/bundle
