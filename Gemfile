@@ -34,6 +34,7 @@ group :development, :test do
   # Use FactoryBot fo RSpec
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
