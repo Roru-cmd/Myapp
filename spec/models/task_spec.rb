@@ -20,11 +20,7 @@ RSpec.describe Task, :type => :model do
         task2 = build(:task)
         expect(task2.validates_length_of(:t_title, :maximum => 255))       
     end
-
-    #it "has many tickets" do
-        #should respond_to(:tickets)
-    #end
-
+    
     describe 'associations' do        
         it { should have_many(:tickets) }
         it { should belong_to(:user).optional }
