@@ -7,17 +7,19 @@ RSpec.describe Ticket, :type => :model do
       expect(@ticket1).to be_valid
     end  
 
+    describe 'associations' do       
+      it { should belong_to(:user) }
+      it { should belong_to(:task).optional }
+    end
+
     it "has a description" do
       ticket2 = build(:ticket, :number, ticket_d: nil)
       expect(ticket2).not_to be_valid
     end
 
-    it "is not valid without a start_date" do
-      ticket2 = build(:ticket, ticket_start: nil)
-      expect(ticket2).not_to be_valid
+    it "has a description not longer than 1000" do
+      ticket2 = build(:ticket)
+      expect(ticket2.validates_length_of(:ticket_d, :maximum => 1000))         
     end
 
-
-    it "is not valid without a end_date"
-
-  end
+end

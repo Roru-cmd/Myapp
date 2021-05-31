@@ -1,8 +1,8 @@
 class Task < ApplicationRecord
   belongs_to :users, optional: true
-  default_scope -> { order(created_at: :desc) }
+  has_many :tickets, dependent: :destroy  
   validates :t_title, presence: true,
             length: { maximum: 255 } 
-  has_many :tickets, dependent: :destroy
-
+  default_scope -> { order(created_at: :desc) }
+  
 end

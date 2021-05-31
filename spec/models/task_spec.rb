@@ -15,10 +15,11 @@ RSpec.describe Task, :type => :model do
         task2 = build(:task, t_title: nil)
         expect(task2).not_to be_valid
     end
+    
 
-    it "has title not longer then 255" do
+    it "has title not longer than 255" do
         task2 = build(:task)
-        expect(task2.validates_length_of(:t_title, :maximum => 255))       
+        expect(task2.validates_length_of(:t_title, :maximum => 255))         
     end
     
     describe 'associations' do        
